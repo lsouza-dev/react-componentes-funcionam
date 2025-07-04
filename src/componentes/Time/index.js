@@ -3,7 +3,7 @@ import Colaborador from '../Colaborador'
 import './time.css'
 import hexToRgba from 'hex-to-rgba'
 
-const Time = ({ time, colaboradores,handleDelete,mudarCor }) => {
+const Time = ({ time, colaboradores,handleDelete,mudarCor, favoritarColaborador }) => {
 
     const [cor,setCor] = useState('')
 
@@ -19,7 +19,7 @@ const Time = ({ time, colaboradores,handleDelete,mudarCor }) => {
             <h3 style={{ borderColor: time.cor }}>{time.nome}</h3>
             <div className='colaboradores'>
                 {colaboradores.map((colaborador, indice) => {
-                   return <Colaborador key={indice} colaborador={colaborador} corDeFundo={time.cor}  aoDeletar={handleDelete}/>
+                   return <Colaborador key={indice} colaborador={colaborador} corDeFundo={time.cor}  aoDeletar={handleDelete} favoritar={favoritarColaborador}/>
                 })}
             </div>
         </section>
